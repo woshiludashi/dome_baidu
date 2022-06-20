@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百度一下，你就知道</title>
+        <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 24px;
+        }
+        .header>div>span{
+            font-size: 13px;
+            color: #222222;
+            margin-right: 24px;
+
+        }
+        .header>div{
+            display: flex;
+            align-items: center;
+        }
+
+        .header>.header-right>.login{
+            margin-left: 8px;
+            margin-right: 0px;
+            width: 48px;
+            height: 24px;
+            background-color: rgb(78,100,242);
+            color: white;
+            text-align: center;
+            line-height: 24px;
+            border-radius: 4px;
+
+        }
+        .main{
+            width: 654px;
+            height: 600px;
+            /*background-color: pink;*/
+            margin: 0 auto;
+
+
+        }
+        .logo{
+            width: 270px;
+            height: 129px;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 25px;
+        }
+        form{
+             width: 654px;
+             height: 44px;
+            /*background-color: orange;*/
+            display: flex;
+            position: relative;
+        }
+        form .txt{
+            width: 550px;
+            height: 44px;
+            box-sizing: border-box;
+            border: 2px solid #cccccc;
+            border-radius: 10px 0px 0px 10px ;
+            border-right: 0;
+            padding-left: 30px;
+            font-size: 20px;
+            outline: none;
+        }
+        form .txt:focus{
+            border-color: #4e6ef2;
+        }
+        form .btn{
+            width: 108px;
+            height: 44px;
+            box-sizing: border-box;
+            border: 0px ;
+            border-radius: 0px 10px 10px 0px ;
+            border-left: 0;
+            background-color: #4e6ef2;
+            color: white;
+            font-size: 17px;
+        }
+       form>span{
+           position: absolute;
+           width: 24px;
+           height: 20px;
+           /*background-color: orange;*/
+           right: 128px;
+           top: 50%;
+           transform: translateY(-50%);
+           background-image:url("https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/searchbox/nicon-2x-6258e1cf13.png") ;
+           background-size: 100%;
+           cursor: pointer;
+       }
+        .icon2{
+            right: 158px;
+            background-position: 0px 48px;
+
+        }
+        .icon2:hover{
+             background-position: 0px 120px;
+        }
+        .icon1:hover{
+             background-position: 0px 72px;
+        }
+        .list{
+            width: 100%;
+            height: 136px;
+            /*background: orange;*/
+            margin-top: 50px;
+        }
+        .list .top{
+            height: 24px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        .hot{
+            font-weight: bold;
+        }
+        .change{
+            color: #666666;
+        }
+        main{
+            width: 654px;
+            height: 120px;
+            column-count: 2;
+            column-gap: 100px;
+            position: relative;
+        }
+        main>span{
+            display: block;
+            line-height: 30px;
+            color:  #222222;
+        }
+        main>span:hover{
+            text-decoration: underline;
+            color: cornflowerblue;
+            cursor: pointer;
+        }
+        .footer{
+            display: flex;
+            height: 39px;
+            /*background: orange;*/
+            justify-content: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            align-items: center;
+
+        }
+        .footer span{
+            font-size: 10px;
+            color: #666666;
+            margin: 0 3px;
+        }
+        .footer span img{
+            width: 49px;
+            height: 20px;
+            display: block;
+        }
+        .wordbox{
+            position: absolute;
+            width: 548px;
+            top: 35px;
+            background: white;
+            z-index: 999;
+            box-sizing: border-box;
+            border: 2px solid #4e6ef2;
+            border-top: 0;
+            padding: 0 20px;
+            display: none;
+
+        }
+        .wordbox hr{
+            position: relative;
+            top: 8px;
+            margin-bottom: 10px;
+        }
+        .wordbox p{
+            line-height: 30px;
+        }
+         .wordbox p:hover{
+             background: #cccccc;
+             color: #4e6ef2;
+             cursor: pointer;
+         }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+       <div class="header-left">
+           <span>新闻</span>
+           <span>hao123</span>
+           <span>地图</span>
+           <span>贴吧</span>
+           <span>视频</span>
+           <span>图片</span>
+           <span>网盘</span>
+           <span>更多</span>
+       </div>
+       <div class="header-right">
+           <span>设置</span>
+           <span class="login">登录</span>
+       </div>
+   </div>
+    <div class="main">
+        <img class="logo" src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png">
+        <form>
+            <input class="txt" type="text">
+            <input class="btn" type="button" value="百度一下">
+            <span class="icon1"></span>
+            <span class="icon2"></span>
+            <div class="wordbox">
+                <hr color="#f1f1f1">
+
+            </div>
+        </form>
+        <div class="list">
+            <p class="top">
+                <span class="hot">百度热搜</span>
+                <span class="change">换一换</span>
+            </p>
+            <main >
+                <span>上海加快经济恢复和重振行动方案</span>
+                <span>北京1人违规外出 致5000余人被隔离</span>
+                <span>首例奥密克戎变异株BA.5输入上海</span>
+                <span>疫情下 这样保障高考</span>
+                <span>安踏女鞋海报被指有擦边嫌疑</span>
+                <span>美国男子持枪扫射人群后被女子击毙</span>
+            </main>
+        </div>
+
+    </div>
+    <div class="footer">
+        <span>关于百度</span>
+        <span>About Baidu</span>
+        <span>使用百度前必读</span>
+        <span>帮助中心</span>
+        <span>京公网安备11000002000001号</span>
+        <span>京ICP证030173号</span>
+        <span>©2022 Baidu </span>
+        <span>互联网药品信息服务资格证书 (京)-经营性-2017-0020</span>
+        <span>信息网络传播视听节目许可证 0110516</span>
+        <span>
+            <img src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/footer/aria-3006e33cce.png">
+        </span>
+
+    </div>
+    <script>
+        //逻辑
+        // 获取元素
+        const wordbox=  document.querySelector(".wordbox")
+        const inputtxt=  document.querySelector(".txt")
+        let txt=""
+        //监听输入
+        inputtxt.oninput=()=>{
+            txt=inputtxt.value
+            if (!txt){
+                wordbox.style.display="none"
+                return
+            }else{
+                wordbox.style.display="block"
+            }
+            // 调用找数据的函数
+            getdata(txt)
+        }
+        //输入框聚焦
+        inputtxt.onfocus=function () {
+            if (!txt){
+                wordbox.style.display="none"
+            }else{
+                wordbox.style.display="block"
+            }
+        }
+         //输入框失去焦点
+         inputtxt.onblur=function () {
+                wordbox.style.display="none"
+        }
+        function getdata(word) {
+            //创建script
+            const script=  document.createElement("script")
+            script.src="https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=36454,31660,36453,36166,36488,36055,26350,36299,36469,36311&wd="+word+"&pwd=zhou%27jie%27l&cb=datashow"
+            document.body.append(script)
+            script.remove()
+        }
+        function datashow(res) {
+           // console.log(res.g)
+            // 通过数据来进行词条的添加
+            //判断数为空不执行
+            if(!res.g) return
+            let htmltxt="<hr color=\"#f1f1f1\">"
+            res.g.forEach(item=>{
+                // console.log(item.q)
+                htmltxt+=`<p>${item.q}</p>`
+            })
+            //放入盒子当中
+            wordbox.innerHTML=htmltxt
+        }
+        //给wordbox添加事件代理
+        wordbox.onclick=function (e) {
+            console.log(123)
+        }
+
+
+
+    </script>
+</body>
+</html>
